@@ -57,6 +57,8 @@ class List():
         while temp_node is not temp_tail:
             if temp_node.next is temp_tail.front:
                 break
+            temp_node = temp_node.next
+            temp_tail = temp_tail.front
             _count += 2
         if temp_node is temp_tail:
             _count += 1
