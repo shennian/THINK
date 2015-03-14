@@ -1,4 +1,5 @@
 import math
+import random
 
 elements = [1, 4, -5, 8, 9, 11, 4, 7, -7, 0]
 
@@ -152,9 +153,69 @@ class AvlTree():
         self.check_tree(tree.left)
         self.check_tree(tree.right)
 
+
+def get_elements():
+    elements = []
+    elements_len = random.randint(10, 20)
+    for i in range(0, elements_len):
+        elements.append(random.randint(-50, 50))
+    return elements
+
+
+def get_test_tree(tree, element):
+    if tree.element >= element:
+        if tree.left is None:
+            tree.left = TreeNode()
+            tree.left.element = element
+            return
+        get_test_tree(tree.left, element)
+
+    else:
+        if tree.right is None:
+            tree.right = TreeNode()
+            tree.right.element = element
+            return
+        get_test_tree(tree.right, element)
+
+
+def test_is_banlance():
+    elements = get_elements()
+    test_tree = TreeNode()
+    test_tree.element = elements[0]
+    for i in elements[1:]:
+        get_test_tree(test_tree, i)
+
+    print AvlTree().is_balance(test_tree)
+
+
+def test_left_or_right():
+    elements = get_elements()
+    test_tree = TreeNode()
+    test_tree.element = elements[0]
+    for i in elements[1:]:
+        get_test_tree(test_tree, i)
+    print AvlTree().left_or_right(test_tree)
+
+
+def test_left_rotate():
+    elements = get_elements()
+    test_root = AvlTree()
+    test_tree = TreeNode()
+    test_tree.element = elements[0]
+    for i in elements[1:]:
+        get_test_tree(test_tree, i)
+    test_root.root.next = test_tree
+    test_tree.parent = test_root.root
+    test_root.root.next = test_root.left_rotate(test_root.root.next)
+    AvlTree().inorder(test_root.root.next)
+
+'''
 tree = AvlTree()
 for i in elements:
     tree.insert(i, 0)
 print "result"
 tree.inorder(tree.root.next)
-
+'''
+test_is_banlance()
+test_left_or_right()
+test_left_rotate()
