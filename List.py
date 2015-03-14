@@ -89,6 +89,15 @@ class List():
 
         return False
 
+    # O(n)
+    def append(self, node):
+        if self.head is None:
+            self.head.next = node
+        else:
+            last_node = self.last_object()
+            last_node.next = node
+            node.front = last_node
+
 
 def test_empty():
     head = ListNode(-1)
