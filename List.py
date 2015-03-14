@@ -8,6 +8,7 @@ class ListNode():
 class List():
     def __init__(self, node):
         self.head = node
+        self.tail = None
 
     # O(1)
     def empty(self):
@@ -48,11 +49,16 @@ class List():
                 return True
         return False
 
-    # O(n)
+    # O(n/2)
     def count(self):
         temp_node = self.head
+        temp_tail = self.tail
         _count = 0
-        while temp_node is not None:
+        while temp_node is not temp_tail:
+            if temp_node.next is temp_tail.front:
+                break
+            _count += 2
+        if temp_node is temp_tail:
             _count += 1
         return _count
 
