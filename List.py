@@ -85,10 +85,10 @@ class List():
 def test_empty():
     head = ListNode(-1)
     list = List(head)
-    print list.empty()
+    assert list.empty()
     node = ListNode(0)
     head.next = node
-    print list.empty()
+    assert list.empty()
 
 
 def test_insert_before():
@@ -105,8 +105,8 @@ def test_insert_before():
     node1.next = node2
     node2.front = node1
 
-    print list.insert_before(1, node2)
-    print list.insert_before(1, ListNode())
+    assert list.insert_before(1, node2)
+    assert list.insert_before(1, ListNode())
 
 
 def test_insert_after():
@@ -123,8 +123,8 @@ def test_insert_after():
     node1.next = node2
     node2.front = node1
 
-    print list.insert_after(1, node1)
-    print list.insert_after(1, ListNode())
+    assert list.insert_after(1, node1)
+    assert list.insert_after(1, ListNode())
 
 
 def test_count():
@@ -141,13 +141,13 @@ def test_count():
     node1.next = node2
     node2.front = node1
 
-    print list.count()
+    assert list.count()
 
 
 def test_first_object():
     head = ListNode(-1)
     list = List(head)
-    print list.first_object()
+    assert list.first_object()
     node = ListNode(0)
     node1 = ListNode(0)
     node2 = ListNode(0)
@@ -159,13 +159,13 @@ def test_first_object():
     node1.next = node2
     node2.front = node1
 
-    print list.first_object()
+    assert list.first_object()
 
 
 def test_last_object():
     head = ListNode(-1)
     list = List(head)
-    print list.last_object()
+    assert list.last_object()
     node = ListNode(0)
     node1 = ListNode(0)
     node2 = ListNode(0)
@@ -177,13 +177,13 @@ def test_last_object():
     node1.next = node2
     node2.front = node1
 
-    print list.last_object()
+    assert list.last_object()
 
 
 def test_find():
     head = ListNode(-1)
     list = List(head)
-    print list.find(0)
+    assert list.find(0)
     node = ListNode(0)
     node1 = ListNode(0)
     node2 = ListNode(0)
@@ -194,8 +194,8 @@ def test_find():
     node1.front = node
     node1.next = node2
     node2.front = node1
-    print list.find(1)
-    print list.find(7)
+    assert list.find(1)
+    assert list.find(7)
 
 
 test_empty()
