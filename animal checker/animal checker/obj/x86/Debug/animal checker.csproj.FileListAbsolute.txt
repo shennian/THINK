@@ -1,0 +1,11 @@
+F:\vs_workspace\animal checker\animal checker\bin\Debug\animal checker.exe
+F:\vs_workspace\animal checker\animal checker\bin\Debug\animal checker.pdb
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\MainWindow.baml
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\MainWindow.g.cs
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\App.g.cs
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal checker_MarkupCompile.cache
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal checker.g.resources
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal_checker.Properties.Resources.resources
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal checker.csproj.GenerateResource.Cache
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal checker.exe
+F:\vs_workspace\animal checker\animal checker\obj\x86\Debug\animal checker.pdb

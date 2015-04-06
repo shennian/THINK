@@ -1,0 +1,6 @@
+﻿<Window x:Class="animal_checker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="400" PreviewKeyDown="chessBoard_PreviewKeyDown">
+    <Canvas Height="450" Name="chessBoard" Width="350" ></Canvas>
+</Window>
