@@ -23,7 +23,9 @@ class Game():
         self.speed_y = 0
         self.block = Rect(440, 550, 20, 20)
         # 目标砖块，用二维数组存储，坐标值
+        self.targetsColor = [[0 for j in range(9)] for i in range(20)]
         self.targets = self.init_targets(file_name)
+        
         # 将目标砖块的二维数组draw在屏幕上
         self.display_targets()
         # 帧数控制
@@ -44,6 +46,8 @@ class Game():
         
         for i in data:
            targets[i["PosY"]][i["PosX"]] = 1
+           self.targetsColor[i["PosY"]][i["PosX"]] = i["color"]
+        
         return targets
     
     # 设置下一时刻block的坐标
@@ -56,9 +60,12 @@ class Game():
             self.speed_x = -self.speed_x
         elif _y <= 0:
             self.speed_y = -self.speed_y
+        # 与bar接触时的判定
         elif _y >= 550:
             if self.block_x > self.bar_x and self.block_x < self.bar_x+100:
                 self.speed_y = -self.speed_y
+            else:
+                pygame.display.set_caption("Game Over~")
         # 将block的坐标映射在targets的二维数字上，如果值为1，表示发生碰撞
         elif self.targets[(_y+10)/30 % 20][(_x+10)/100 % 9] == 1:
             self.targets[(_y+10)/30 % 20][(_x+10)/100 % 9] = 0
@@ -88,7 +95,7 @@ class Game():
            for j in range(9):
                if self.targets[i][j] == 1:
                    t = Rect(j*100, i*30, 100, 30)
-                   num = random.randint(1,6)
+                   num = self.targetsColor[i][j]
                    pygame.draw.rect(self.screen, self.colors[num], t)
     
     # 初始颜色

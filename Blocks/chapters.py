@@ -60,14 +60,16 @@ while True:
                     num = random.randint(1,6)
                     json.dump(data_json, fp)
                     exit()
-                    screen1 = pygame.display.set_mode((900, 600), 0, 32)
                 elif y <= 570:
+                    numColor = random.randint(1,6)
                     data = {"PosX":x/100%9,
 		            "PosY":y/30%19,
+		            "color":numColor,
                     }
+                    print data
                     data_json.append(data)
-                    num = random.randint(1,6)
+                    
                     rect = Rect(x+2, y+2, 97, 27)
-                    pygame.draw.rect(screen, colors[num], rect)
+                    pygame.draw.rect(screen, colors[numColor], rect)
    
     pygame.display.update()
