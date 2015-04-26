@@ -1,0 +1,42 @@
+# coding=utf-8
+import pygame
+from pygame.locals import *
+from sys import exit
+import time
+import random
+import json
+
+color_set = []
+
+screen = pygame.display.set_mode((800, 500), 0, 32)
+screen.fill((255,255,255))
+pygame.display.set_caption("ModelMaker")
+for i in range(20):
+    pygame.draw.line(screen, (165+i,165+i,165+i), (280+i,0), (280+i,500), 1)
+    pygame.draw.line(screen, (165+i,165+i,165+i), (0,50+i), (280,50+i), 1)
+    
+    pygame.draw.line(screen, (165+i,165+i,165+i), (0,120+i), (280,120+i), 1)
+    pygame.draw.line(screen, (165+i,165+i,165+i), (135+i,0), (135+i,50), 1)
+
+'''
+rect = Rect(0, 0, 140, 50)
+pygame.draw.rect(screen, (165, 165, 165), rect)
+'''
+# 画网格
+for i in range(10):
+    pygame.draw.line(screen, (105, 105, 105), (300, i*50), (800, i*50), 1)
+    pygame.draw.line(screen, (105, 105, 105), (300+i*50, 0), (300+i*50, 500), 1)
+
+pygame.font.init()
+myfont = pygame.font.SysFont("Comic Sans MS", 50)
+textsurface = myfont.render('save', False, (0, 0, 0))
+screen.blit(textsurface,(30,5))
+textsurface = myfont.render('undo', False, (0, 0, 0))
+screen.blit(textsurface,(175,5))
+
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            exit()
+    pygame.display.update()
