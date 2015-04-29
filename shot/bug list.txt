@@ -1,0 +1,33 @@
+// 1 : complete steps to reprodece the bug
+// 2 : expected behavior
+// 3 : observed behavior
+// 4 : who it`s assigned to
+// 5 : whether it has been fixed or not
+
+# 发射子弹同时只有一枚 
+1 判断按下空格键
+      如果标识位为假
+          发射子弹，标识位为真
+      直到子弹消失，标识位为假
+
+2 按下空格子弹发射，子弹同时只有一枚，且子弹存在时，按下空格不发射子弹
+
+3 子弹连续发射，不受空格键控制
+
+4 sen
+
+5 还没有
+
+# 子弹与目标飞机发生碰撞时，没有消失
+1 如果发生碰撞
+      该子弹对象清除
+
+2 发生碰撞，目标和子弹均消失，且按下空格子弹发射
+
+3 目标消失，子弹没消失
+
+4 sen
+
+5 还没有
+
+#  
