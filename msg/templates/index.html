@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} biubiu~ {% endblock %}
+
+{% block page_content %}
+
+<h1> I am Message board </h1>
+
+<h2> messages </h2>
+<ul>
+	<h3> {% if msgs %}  {% else %} no messages {% endif %} </h3>
+	{% for msg in msgs %}
+    	<h3><li> {% if msg %} {{ msg }} {% else %} no messages {% endif %} </li></h3>
+	{% endfor %}
+</ul>
+
+{{ wtf.quick_form(form) }}
+{% endblock %}
