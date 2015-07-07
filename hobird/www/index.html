@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+	<style>
+		.inner {
+			border: 1px solid red;
+			margin: auto;
+   			width: 60%;
+			margin-top: 100px;
+			margin-bottom: 100px;
+			height: 300px;
+			
+			
+		}
+		.main {
+			position: relative;
+			
+			margin: auto;
+   			width: 60%;
+			height: 150px;
+			margin-top: 100px;
+			
+			
+		}
+		
+
+		h1 {
+			position: relative;
+			margin-top: 0px;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 60px;
+			text-align: center;
+			height: 60px;
+		}
+		p {
+			position: relative;
+			margin-top: 0px;
+			font-family: 'Shadows Into Light', cursive;
+			font-size: 20px;
+			text-align: center;
+		}
+	</style>
+	
+</head>
+	<title> buibui~ </title>
+	<body>
+		
+		<div class = "main">
+			<h1> Hobird </h1>
+			<p> A simple HTTP server by sen </p>
+			<p><canvas id = "paint" height = 50></p>
+			<script>
+				var canvas = document.getElementById("paint");
+				var ctx = canvas.getContext("2d");
+				ctx.beginPath();
+				ctx.arc(150,25,25,0,2*Math.PI);
+				ctx.fillstyle = 'black';
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(100, 25);
+				ctx.lineTo(0, 25);
+				ctx.lineWidth = 3;
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(200, 25);
+				ctx.lineTo(300, 25);
+				ctx.lineWidth = 3;
+				ctx.stroke();
+			</script>
+			<p><canvas id="loop" height="200"></canvas></p>
+			<script>
+				var canvas = document.getElementById("loop");
+				var ctx = canvas.getContext("2d");
+				var direction = "up";
+				var i = 100;
+				function display(x) {
+					move();
+					ctx.clearRect(0, 0, 300, 200);
+					
+					ctx.beginPath();
+					ctx.arc(x, i, 10,0,2*Math.PI);
+					ctx.closePath();
+					ctx.fillstyle = 'black';
+					ctx.fill();
+				}
+				
+				function move() {
+					if(i <= 10) {
+						direction = "down";
+					} else if (i >= 190) {
+						direction = "up";
+					}
+					if (direction == "up") {
+						i -= 1;
+					} else {
+						i += 1;
+					}
+					
+				}
+				setInterval(display, 10, 150);
+			</script>
+		</div>
+		
+		
+	</body>
+</html>
