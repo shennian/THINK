@@ -62,8 +62,7 @@ class HobirdServer():
 	def command_display(self, address):
 		print address
 		
-	def handle_http_request(self, data):
-		
+	def handle_http_request(self, data):	
 		http_request = []
 		_data = data.split('\r\n')
 		for request in _data:
@@ -71,11 +70,8 @@ class HobirdServer():
 		return http_request
 		
 
-
 if __name__ == '__main__':
 	server = HobirdServer('127.0.0.1', 5000)
-	#s = HobirdServer('113.250.153.252', 5000)
-	
 	server.run()
 		
 		
