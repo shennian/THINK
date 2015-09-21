@@ -1,0 +1,78 @@
+* {padding:0; margin:0;}
+body {
+	font-family: Microsoft YaHei，Arial,Helvetica;
+	font-size: 1.5em;
+	color:#eee;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+#userMessage {
+	width:960px;
+	margin:30px auto;
+	padding:20px 0;
+	background-color:#64aef9;
+	box-shadow:1px 2px 8px #000;
+	overflow:hidden;
+	text-align:center;
+}
+#userMessage a{
+	display:block;
+}
+#userMessage .photo img{
+	width:200px;
+	height:200px;
+	background-color:#eee;
+	margin:50px auto 20px;
+	border-radius:100px;
+}
+#editPanel{
+	width:960px;
+	color:#666;
+	box-shadow:1px 2px 8px #000;
+	border-radius:20px;
+	margin:0 auto;
+	overflow:hidden;
+	padding-bottom:50px;
+	margin-bottom:50px;
+	text-align:center;
+}
+.sm{
+	font-size:1.5em;
+}
+.lg {
+	font-size:3em;
+}
+.clearfix{
+	clear:both;
+}
+#editPanel .inputGroup{
+	padding-left:200px;
+	padding-right:200px;
+	padding-top:20px;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.inputGroup input{
+	float:right;
+	width:300px;
+	height:30px;
+	vertical-align:middle;
+	border-radius:5px;
+	outline:0;
+	font-size:20px;
+}
+.inputGroup textarea{
+	float:right;
+	width:300px;
+	height:150px;
+}
+button{
+	width:100px;
+	height:40px;
+	font-size:1.2em;
+	margin:10px auto;
+}

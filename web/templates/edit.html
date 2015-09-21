@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Model</title>
+<link rel="stylesheet" type="text/css" href="static/edit.css"/>
+</head>
+<body>
+    <div id="userMessage">
+		<section class="photo">
+			<a href="#">
+			<img src="static/1.jpg"/>
+			</a>
+		</section>
+		<h2>sen</h2>
+		<p>hello world</p>
+	</div>
+	
+	<div id="editPanel">
+		<form action="/set_info" method="post" enctype="multipart/form-data">
+		<div class="inputGroup sm">
+			<label for="username">用户名：</label><input type="text" id="username" name="username" value="sen" disabled/>
+		</div>
+		<div class="inputGroup sm">
+			<label for="nickName">昵称：</label><input type="text" id="nickName" name="nickName" />
+		</div>
+		<div class="inputGroup sm">
+			<label for="email">邮箱：</label><input type="email" id="email" name="email"/>
+		</div>
+		<div class="inputGroup sm">
+			<label for="photo">头像：</label><input type="file" id="photo" name="photo"/>
+		</div>
+		<div class="inputGroup sm">
+			<label for="signature">个性签名</label><textarea id="signature" name="signature"></textarea>
+		</div>
+		<div class="clearfix"></div>
+		<button type="submit">提交</button>
+		</form>
+	</div>
+</body>
+</html>
